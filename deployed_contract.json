@@ -1,0 +1,11 @@
+{
+    "network": "arbitrum-sepolia-test", 
+    "rpc-url": "https://sepolia-rollup.arbitrum.io/rpc", 
+    "explorer-url": "https://sepolia.arbiscan.io", 
+    "contract-address": {
+        "TuNEO": "0x847d4c1fc9f1ead9ff48f3c5df6ff79ad1267a9e", 
+        "WtuNEO": "0x5aed6ac683d2e289f0aff406b042f80eac6101ac", 
+        "NativeMinter": "0x70b1f0e02efe6e61c6c278479efcc0d28ad9bb28", 
+        "ERC20Minter": "0xf451fc54cd74ff7fcd1d3e60d42753e3e4190e19"
+    }
+}
