@@ -5,7 +5,8 @@
     "contract-address": {
         "TuNEO": "0x847d4c1fc9f1ead9ff48f3c5df6ff79ad1267a9e", 
         "WtuNEO": "0x5aed6ac683d2e289f0aff406b042f80eac6101ac", 
-        "NativeMinter": "0x70b1f0e02efe6e61c6c278479efcc0d28ad9bb28", 
-        "ERC20Minter": "0xf451fc54cd74ff7fcd1d3e60d42753e3e4190e19"
+        "NativeMinter": "0x1Ac29D20A28D22039DA36f495e93DC73B92C8728", 
+        "MockERC20": "0xf80e983A3d48Dd64926312ef3646919E95a65709", 
+        "ERC20Minter": "0x31844c3024089D3722349E97AecEE04a7dc26Bc6"
     }
 }

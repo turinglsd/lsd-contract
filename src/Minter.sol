@@ -1908,6 +1908,7 @@ contract NativeMinterRedeem is BaseMinterRedeem, NativeMinter {
     using SafeTransferLib for IERC20;
 
     constructor(address _stakingToken) NativeMinter(_stakingToken) {
+        
     }
 
     function redeem(uint256 amount, address receiver) public virtual nonReentrant {
