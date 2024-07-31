@@ -2,8 +2,9 @@
 pragma solidity ^0.8.13;
 
 import {Test, console} from "forge-std/Test.sol"; 
-import {TuNEO} from "src/tuNEO.sol";
+import {TuNEO, MERC20} from "src/tuNEO.sol";
 import {WtuNEO, ERC20} from "src/wtuNEO.sol";
+import {NativeMinterRedeem, ERC20MinterRedeem} from "src/Minter.sol";
 
 contract TokenTest is Test {
     address owner = address(0x01);
@@ -14,6 +15,10 @@ contract TokenTest is Test {
     TuNEO tuNEO;
     WtuNEO wtuNEO;
 
+    NativeMinterRedeem nativeMinter;
+    ERC20MinterRedeem eRC20Minter;
+    MERC20 erc20;
+
     function setUp() public {
         vm.startPrank(owner);
 
@@ -23,8 +28,19 @@ contract TokenTest is Test {
         tuNEO.mint(user1, 10 ether);
         tuNEO.mint(user2, 10 ether);
         tuNEO.mint(address(this), 100 ether);
-    
+
+        nativeMinter = new NativeMinterRedeem(address(tuNEO));
+        erc20 = new MERC20("Mock", "Mock", 18);
+        erc20.mint(address(owner), 1000 * 10 ** 18);
+        eRC20Minter = new ERC20MinterRedeem(address(erc20), address(tuNEO));
+        tuNEO.transferOwnership(address(eRC20Minter));
         vm.stopPrank();
+    }
+
+    function test_minter_deposit() public {
+        vm.startPrank(owner);
+        erc20.approve(address(eRC20Minter), type(uint).max);
+        eRC20Minter.deposit(1 ether, owner);
     }
 
     function test_restake() public {
