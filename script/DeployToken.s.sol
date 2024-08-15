@@ -19,7 +19,7 @@ contract DeployScript is Script {
         uint8 decimals = 18;
         uint privateKey = vm.envUint("PRIVATE_KEY");
         address deployer = vm.addr(privateKey);
-        uint32 rewardsCycleLength = 604800; // 1 week in seconds
+        uint32 rewardsCycleLength = 1; // 6s in seconds
         vm.startBroadcast(privateKey);
         tuNEO = new TuNEO("tuNEO", "tuNEO", decimals);
         wtuNEO = new WtuNEO(ERC20(address(tuNEO)), rewardsCycleLength);

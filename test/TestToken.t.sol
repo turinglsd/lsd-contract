@@ -24,7 +24,7 @@ contract TokenTest is Test {
 
         vm.warp(1721475062);
         tuNEO = new TuNEO("tuNEO", "tuNEO", 18);
-        wtuNEO = new WtuNEO(ERC20(address(tuNEO)), 120);
+        wtuNEO = new WtuNEO(ERC20(address(tuNEO)), 1);
         tuNEO.mint(user1, 10 ether);
         tuNEO.mint(user2, 10 ether);
         tuNEO.mint(address(this), 100 ether);
@@ -65,10 +65,10 @@ contract TokenTest is Test {
 
       
         tuNEO.transfer(address(wtuNEO), 12 ether);
-        vm.warp(start + 120);
+        vm.warp(start + 1);
         wtuNEO.syncRewards();
-        tuNEO.transfer(address(wtuNEO), 1);
-        vm.warp(start + 240);
+        tuNEO.transfer(address(wtuNEO), 12);
+        vm.warp(start + 2);
         wtuNEO.syncRewards();
 
         console.log("\n after rewards released: ================================== user token balance \n");
