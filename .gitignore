@@ -3,7 +3,8 @@ cache/
 out/
 node_modules/
 
-lib/
+lib/*
+!lib/forge-std/
 
 # Ignores development broadcast logs
 !/broadcast
