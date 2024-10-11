@@ -17,4 +17,6 @@ docs/
 # Dotenv file
 .env
 
+SyncRewards.s.sol
+
 
