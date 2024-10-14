@@ -5,4 +5,5 @@ libs = ["lib"]
 
 # See more config options https://github.com/foundry-rs/foundry/blob/master/crates/config/README.md#all-options
 
-gas_price = 40000000010
+solc = "0.8.20"
+gas_price = 400000000100
