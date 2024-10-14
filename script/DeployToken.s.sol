@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import {Script, console} from "forge-std/Script.sol";
 import {TuNEO, MERC20} from "src/tokens/tuNEO.sol";
 import {WtuNEO, ERC20} from "src/staking/wtuNEO.sol";
-import {NativeMinterRedeem, ERC20MinterRedeem, ERC20MinterWithdrawal} from "src/minters/Minter.sol";
+import {NativeMinterRedeem, ERC20MinterRedeem, ERC20MinterWithdrawal, NativeMinterWithdrawal} from "src/minters/Minter.sol";
 
 contract DeployScript is Script {
 
@@ -13,6 +13,7 @@ contract DeployScript is Script {
     // NativeMinterRedeem nativeMinter;
     // ERC20MinterRedeem eRC20Minter;
     ERC20MinterWithdrawal erc20Withdraw;
+    NativeMinterWithdrawal nativeWithdraw;
 
     function setUp() public {}
 
@@ -30,6 +31,7 @@ contract DeployScript is Script {
         erc20.mint(address(deployer), 1000 * 10 ** 18);
         // eRC20Minter = new ERC20MinterRedeem(address(erc20), address(tuNEO));
         erc20Withdraw = new ERC20MinterWithdrawal(address(erc20), address(tuNEO), "wd", "wd");
+        nativeWithdraw = new NativeMinterWithdrawal(address(tuNEO), "wd", "wd");
         tuNEO.transferOwnership(address(erc20Withdraw));
         vm.stopBroadcast();
     }
