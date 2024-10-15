@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import {Test, console} from "forge-std/Test.sol"; 
 import {TuNEO, MERC20} from "src/tokens/tuNEO.sol";
 import {WtuNEO, ERC20} from "src/staking/wtuNEO.sol";
-import {NativeMinterRedeem, ERC20MinterRedeem} from "src/minters/Minter.sol";
+import {NativeMinterRedeem, ERC20MinterRedeem} from "src/minters/tuNEOMinter.sol";
 
 contract TokenTest is Test {
     address owner = address(0x01);

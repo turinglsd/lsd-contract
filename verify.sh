@@ -77,8 +77,8 @@ echo "Using Verifier URL: $VERIFIER_URL"
 # Compile and verify contracts
 compile_and_verify_contract "$TUNEO_ADDRESS" "src/tokens/tuNEO.sol" "TuNEO"
 compile_and_verify_contract "$WTUNEO_ADDRESS" "src/staking/wtuNEO.sol" "WtuNEO"
-compile_and_verify_contract "$NATIVE_MINTER_ADDRESS" "src/minters/Minter.sol" "NativeMinterWithdrawal"
+compile_and_verify_contract "$NATIVE_MINTER_ADDRESS" "src/minters/tuNEOMinter.sol" "NativeMinterWithdrawal"
 compile_and_verify_contract "$MOCK_ERC20_ADDRESS" "src/tokens/tuNEO.sol" "MERC20"
-compile_and_verify_contract "$ERC20_MINTER_ADDRESS" "src/minters/Minter.sol" "ERC20MinterWithdrawal"
+compile_and_verify_contract "$ERC20_MINTER_ADDRESS" "src/minters/tuNEOMinter.sol" "ERC20MinterWithdrawal"
 
 echo "Verification process completed."

@@ -4,7 +4,7 @@ pragma solidity ^0.8.13;
 import {Script, console} from "forge-std/Script.sol";
 import {TuNEO, MERC20} from "src/tokens/tuNEO.sol";
 import {WtuNEO, ERC20} from "src/staking/wtuNEO.sol";
-import {NativeMinterRedeem, ERC20MinterRedeem, ERC20MinterWithdrawal, NativeMinterWithdrawal} from "src/minters/Minter.sol";
+import {NativeMinterRedeem, ERC20MinterRedeem, ERC20MinterWithdrawal, NativeMinterWithdrawal} from "src/minters/tuNEOMinter.sol";
 
 contract DeployScript is Script {
 
