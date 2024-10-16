@@ -13,8 +13,8 @@ interface IWtuNEO {
 }
 
 contract SyncRewardsScript is Script {
-    address constant tuNEO = 0x02502ACd5fBdeed132748b76993149685Af4EA2a;
-    address constant wtuNEO = 0x968f6Ac64a274B2F04506D22e0b2Bc8552011258;
+    address constant tuNEO = 0xE2E9fB0f2A42ceECa5d3c6C798dd115B616a9581;
+    address constant wtuNEO = 0xfeFcA9C2FC70b0Ca71acdbA1920d8CD5485547f8;
 
     function run() public {
         // Load private key
