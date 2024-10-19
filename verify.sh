@@ -20,9 +20,16 @@ fi
 # Parse JSON file for contract addresses
 TUNEO_ADDRESS=$(jq -r '."contract-address".TuNEO' "$CONFIG_FILE")
 WTUNEO_ADDRESS=$(jq -r '."contract-address".WtuNEO' "$CONFIG_FILE")
-NATIVE_MINTER_ADDRESS=$(jq -r '."contract-address".NativeMinter' "$CONFIG_FILE")
-MOCK_ERC20_ADDRESS=$(jq -r '."contract-address".MockERC20' "$CONFIG_FILE")
-ERC20_MINTER_ADDRESS=$(jq -r '."contract-address".ERC20Minter' "$CONFIG_FILE")
+TUNEO_NATIVE_MINTER_ADDRESS=$(jq -r '."contract-address".TuNEONativeMinter' "$CONFIG_FILE")
+MOCK_NEO_ADDRESS=$(jq -r '."contract-address".MockNEO' "$CONFIG_FILE")
+TUNEO_ERC20_MINTER_ADDRESS=$(jq -r '."contract-address".TuNEOERC20Minter' "$CONFIG_FILE")
+TUBNEO_ADDRESS=$(jq -r '."contract-address".TuBNEO' "$CONFIG_FILE")
+WTUBNEO_ADDRESS=$(jq -r '."contract-address".WtuBNEO' "$CONFIG_FILE")
+MOCK_BNEO_ADDRESS=$(jq -r '."contract-address".MockBNEO' "$CONFIG_FILE")
+TUBNEO_ERC20_MINTER_ADDRESS=$(jq -r '."contract-address".TuBNEOERC20Minter' "$CONFIG_FILE")
+TUGAS_ADDRESS=$(jq -r '."contract-address".TuGAS' "$CONFIG_FILE")
+WTUGAS_ADDRESS=$(jq -r '."contract-address".WtuGAS' "$CONFIG_FILE")
+TUGAS_NATIVE_MINTER_ADDRESS=$(jq -r '."contract-address".TuGASNativeMinter' "$CONFIG_FILE")
 
 # Function to compile, flatten, and verify a contract
 compile_and_verify_contract() {
@@ -77,8 +84,15 @@ echo "Using Verifier URL: $VERIFIER_URL"
 # Compile and verify contracts
 compile_and_verify_contract "$TUNEO_ADDRESS" "src/tokens/tuNEO.sol" "TuNEO"
 compile_and_verify_contract "$WTUNEO_ADDRESS" "src/staking/wtuNEO.sol" "WtuNEO"
-compile_and_verify_contract "$NATIVE_MINTER_ADDRESS" "src/minters/tuNEOMinter.sol" "NativeMinterWithdrawal"
-compile_and_verify_contract "$MOCK_ERC20_ADDRESS" "src/tokens/tuNEO.sol" "MERC20"
-compile_and_verify_contract "$ERC20_MINTER_ADDRESS" "src/minters/tuNEOMinter.sol" "ERC20MinterWithdrawal"
+compile_and_verify_contract "$TUNEO_NATIVE_MINTER_ADDRESS" "src/minters/tuNEOMinter.sol" "NativeMinterWithdrawal"
+compile_and_verify_contract "$MOCK_NEO_ADDRESS" "src/tokens/tuNEO.sol" "MERC20"
+compile_and_verify_contract "$TUNEO_ERC20_MINTER_ADDRESS" "src/minters/tuNEOMinter.sol" "ERC20MinterWithdrawal"
+compile_and_verify_contract "$TUBNEO_ADDRESS" "src/tokens/tuBNEO.sol" "TuBNEO"
+compile_and_verify_contract "$WTUBNEO_ADDRESS" "src/staking/wtuBNEO.sol" "WtuBNEO"
+compile_and_verify_contract "$MOCK_BNEO_ADDRESS" "src/tokens/tuNEO.sol" "MERC20"
+compile_and_verify_contract "$TUBNEO_ERC20_MINTER_ADDRESS" "src/minters/tuNEOMinter.sol" "ERC20MinterWithdrawal"
+compile_and_verify_contract "$TUGAS_ADDRESS" "src/tokens/tuGAS.sol" "TuGAS"
+compile_and_verify_contract "$WTUGAS_ADDRESS" "src/staking/wtuGAS.sol" "WtuGAS"
+compile_and_verify_contract "$TUGAS_NATIVE_MINTER_ADDRESS" "src/minters/tuNEOMinter.sol" "NativeMinterWithdrawal"
 
-echo "Verification process completed."
+echo "Verification process completed. Compiler run successful. Artifact(s) can be found in directory 'json_inputs'."

@@ -1,3 +1,4 @@
+
 // SPDX-License-Identifier: GPL-2.0-or-later
 pragma solidity >=0.8.0;
 import {ERC20} from "src/ERC20.sol";
@@ -849,11 +850,11 @@ abstract contract ReentrancyGuard {
     Mint vs Deposit
     mint() - deposit targeting a specific number of wstToken out
     deposit() - deposit knowing a specific number of stToken in */
-contract WtuNEO is xERC4626, ReentrancyGuard {
+contract WtuGAS is xERC4626, ReentrancyGuard {
 
     /* ========== CONSTRUCTOR ========== */
     constructor(ERC20 _underlying, uint32 _rewardsCycleLength)
-        ERC4626(_underlying, "Wrapped tuNEO", "WtuNEO")
+        ERC4626(_underlying, "Wrapped tuGAS", "WtuGAS")
         xERC4626(_rewardsCycleLength)
     {}
 

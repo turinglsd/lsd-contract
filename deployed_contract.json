@@ -5,8 +5,15 @@
     "contract-address": {
         "TuNEO": "0xe2e9fb0f2a42ceeca5d3c6c798dd115b616a9581", 
         "WtuNEO": "0xfefca9c2fc70b0ca71acdba1920d8cd5485547f8", 
-        "NativeMinter": "0xf9c1aa3d3d2200ea2c2eeea99ed77173bf2164e1", 
-        "MockERC20": "0x235d742c534ccbbf8c121467555bbd7b20b68772", 
-        "ERC20Minter": "0x7e04e6464bf5e96a1373e993faa467f80f4cecf7"
+        "TuNEONativeMinter": "0xf9c1aa3d3d2200ea2c2eeea99ed77173bf2164e1", 
+        "MockNEO": "0x235d742c534ccbbf8c121467555bbd7b20b68772", 
+        "TuNEOERC20Minter": "0x7e04e6464bf5e96a1373e993faa467f80f4cecf7",
+        "TuBNEO": "0x3b69135e92b5c28bbb9da105c28bc6f98f06cf89", 
+        "WtuBNEO": "0xb68c97546528f127471736f309e35e71bac5b6b7", 
+        "MockBNEO": "0xaf045b886fbd94b347b55c2677ee18f6f5b54988", 
+        "TuBNEOERC20Minter": "0xc55215ae37fb289350f26973225f9b1028d5690d",
+        "TuGAS": "0x0423bfd670072acd3a89c8fe31718037c2474171", 
+        "WtuGAS": "0x7afd948ede343ccac36a79ac61fb8caed6fd4f98", 
+        "TuGASNativeMinter": "0xc6962a4ffeaf4c7fdf46c02ca99c29a4cc366f2e"
     }
 }
