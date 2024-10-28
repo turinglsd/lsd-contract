@@ -13,7 +13,9 @@ contract SetFeeScript is Script {
     ERC20MinterWithdrawal erc20withdraw_gas;
 
 
-    function setUp() public {}
+    function setUp() public {
+
+    }
 
     function run() public {
         // set_ownership();
@@ -31,21 +33,31 @@ contract SetFeeScript is Script {
         vm.stopBroadcast();
     }
 
-
     function set_fee() public {
         uint privateKey = vm.envUint("PRIVATE_KEY");
         // address deployer = vm.addr(privateKey);
         vm.startBroadcast(privateKey);
         // updateWithdrawalFee
-        // withdrawMinter = NativeMinterWithdrawal(0xC6962a4ffeaf4c7fDF46C02ca99C29A4CC366f2e);
+        //withdrawMinter = NativeMinterWithdrawal(0xC6962a4ffeaf4c7fDF46C02ca99C29A4CC366f2e);
         erc20withdraw_bneo = ERC20MinterWithdrawal(0xC55215ae37fB289350F26973225f9b1028D5690d);
         erc20withdraw_gas = ERC20MinterWithdrawal(0xC6962a4ffeaf4c7fDF46C02ca99C29A4CC366f2e);
 
-        // withdrawMinter.updateWithdrawalFee(50);
-        erc20withdraw_bneo.updateWithdrawalFee(50);
-        erc20withdraw_gas.updateWithdrawalFee(50);
-        // uint fee = withdrawMinter.withdrawalFee();
+         // withdrawMinter.updateWithdrawalFee(50);
         // require(fee == 50, "fee is not 50");
+
+        // erc20withdraw_bneo.updateWithdrawalFee(50);
+        uint256 bneo_fee = erc20withdraw_bneo.withdrawalFee();
+        console.log("bneo_fee is:",bneo_fee);
+        require(bneo_fee == 50, "fee is not 50");
+
+        // erc20withdraw_gas.updateWithdrawalFee(50);
+        uint256 gas_fee = erc20withdraw_bneo.withdrawalFee();
+        console.log("gas_fee is:",gas_fee);
+
+        // uint fee = withdrawMinter.withdrawalFee();
+        require(gas_fee == 50, "fee is not 50");
+
+
         vm.stopBroadcast();
 
     }

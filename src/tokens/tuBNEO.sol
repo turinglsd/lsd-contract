@@ -1069,7 +1069,7 @@ abstract contract ERC20Pausable is ERC20, Pausable {
     }
 }
 
-contract TuBNEO is ERC20, ERC20Burnable, Pausable, Ownable {
+contract TubNEO is ERC20, ERC20Burnable, Pausable, Ownable {
     constructor(
         string memory name,
         string memory symbol,
